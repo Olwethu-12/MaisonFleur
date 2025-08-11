@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maison Fleur - Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Maison Fleur</h1>
+    <p>Elegant floral arrangements for every occasion</p>
+  </header>
+
+  <main>
+    <section class="gallery" aria-label="Gallery of flower arrangements">
+
+      <figure class="gallery-item">
+        <img src="https://i.postimg.cc/FF8jYCDJ/3.jpg" alt="Rose Delight" />
+        <figcaption>
+          Rose Delight
+          <button class="order-btn" onclick="handleOrder('Rose Delight')">Order</button>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://i.postimg.cc/K8rLsGFn/4.jpg" alt="Autumn Grace" />
+        <figcaption>
+          Autumn Grace
+          <button class="order-btn" onclick="handleOrder('Autumn Grace')">Order</button>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://i.postimg.cc/j59JJCQr/14.jpg" alt="Lavender Dream" />
+        <figcaption>
+          Lavender Dream
+          <button class="order-btn" onclick="handleOrder('Lavender Dream')">Order</button>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://i.postimg.cc/rwCYTR5s/5.jpg" alt="Blushing Peonies" />
+        <figcaption>
+          Blushing Peonies
+          <button class="order-btn" onclick="handleOrder('Blushing Peonies')">Order</button>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://i.postimg.cc/T1DC4KRR/Pretty-Tings.jpg" alt="Orchid Elegance" />
+        <figcaption>
+          Orchid Elegance
+          <button class="order-btn" onclick="handleOrder('Orchid Elegance')">Order</button>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://i.postimg.cc/j59McHYg/Spring-Aesthetic-Flower-Gift-Pink-Bubble-Dream.jpg" alt="Daisy Delight" />
+        <figcaption>
+          Daisy Delight
+          <button class="order-btn" onclick="handleOrder('Daisy Delight')">Order</button>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://i.postimg.cc/tRZSTMFL/pretty-flowers.jpg" alt="Sunset Tulips" />
+        <figcaption>
+          Sunset Tulips
+          <button class="order-btn" onclick="handleOrder('Sunset Tulips')">Order</button>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://i.postimg.cc/kMbs9tmC/orchid.jpg" alt="Garden Roses" />
+        <figcaption>
+          Garden Roses
+          <button class="order-btn" onclick="handleOrder('Garden Roses')">Order</button>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="https://i.postimg.cc/3xnC9XgX/10.jpg" alt="Peach Carnations" />
+        <figcaption>
+          Peach Carnations
+          <button class="order-btn" onclick="handleOrder('Peach Carnations')">Order</button>
+        </figcaption>
+      </figure>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact us: jingelaolwethu@gmail.com | 065 994 5610</p>
+  </footer>
+
+  <!-- Modal Structure -->
+  <div id="orderModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+    <div class="modal-content" role="document">
+      <button class="close-btn" aria-label="Close order form">&times;</button>
+      <h2 id="modalTitle">Order Flowers</h2>
+      <form id="orderForm">
+        <label for="flowerName">Flower</label>
+        <input type="text" id="flowerName" name="flowerName" readonly />
+
+        <label for="customerName">Your Name</label>
+        <input type="text" id="customerName" name="customerName" required />
+
+        <label for="customerEmail">Email</label>
+        <input type="email" id="customerEmail" name="customerEmail" required />
+
+        <label for="customerPhone">Phone Number</label>
+        <input type="tel" id="customerPhone" name="customerPhone" />
+
+        <label for="orderNotes">Additional Notes</label>
+        <textarea id="orderNotes" name="orderNotes" rows="3" placeholder="Any special requests?"></textarea>
+
+        <button type="submit" class="submit-btn">Submit Order</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('orderModal');
+    const closeBtn = modal.querySelector('.close-btn');
+    const orderForm = document.getElementById('orderForm');
+    const flowerInput = document.getElementById('flowerName');
+
+    // Your WhatsApp number in international format (no + or spaces)
+    const businessNumber = "27659945610"; // Example: 27831234567 for South Africa
+
+    // Open modal and set flower name
+    function handleOrder(flowerName) {
+      flowerInput.value = flowerName;
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal
+    function closeModal() {
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
+      orderForm.reset();
+      document.body.style.overflow = 'auto';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Handle form submission
+    orderForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const customerName = orderForm.customerName.value.trim();
+      const customerEmail = orderForm.customerEmail.value.trim();
+      const customerPhone = orderForm.customerPhone.value.trim();
+      const orderNotes = orderForm.orderNotes.value.trim();
+      const flower = flowerInput.value;
+
+      const message = `🌸 *New Flower Order* 🌸
+Flower: ${flower}
+Name: ${customerName}
+Email: ${customerEmail}
+Phone: ${customerPhone || 'N/A'}
+Notes: ${orderNotes || 'None'}`;
+
+      const whatsappURL = `https://wa.me/${businessNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappURL, "_blank");
+
+      closeModal();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maison Fleur - Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Contact Maison Fleur</h1>
+    <p>We’d love to hear from you!</p>
+  </header>
+
+  <main>
+    <section class="contact-info">
+      <h2>Get in touch</h2>
+      <p><strong>Phone:</strong> 065 994 5610</p>
+      <p><strong>Email:</strong> jingelaolwethu@gmail.com</p>
+      <p><strong>Address:</strong> 23 Hunt Road, Bulwer</p>
+      <p><strong>Hours:</strong> Mon - Fri: 9am - 6pm</p>
+    </section>
+
+    <section class="map">
+      <h2>Find Us</h2>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3460.353401355325!2d30.995688175826764!3d-29.854080375020004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef7a9fac5ac4215%3A0x252b5f62c8bf55c6!2s23%20Hunt%20Rd%2C%20Bulwer%2C%20Berea%2C%204083!5e0!3m2!1sen!2sza!4v1754946383100!5m2!1sen!2sza" 
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <section class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form id="contactForm" action="#" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact us: jingelaolwethu@gmail.com | 065 994 5610</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thank you for reaching out! We will get back to you soon.');
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

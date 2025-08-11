@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background: #F9D3E2;
+  color: #3D7337;
+  line-height: 1.7;
+  font-size: 18px;
+  padding: 1rem;
+}
+
+header {
+  background: #fff;
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+  border-bottom: 2px solid #BADD7F;
+  box-shadow: 0 2px 8px rgba(61, 115, 55, 0.1);
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #3D7337;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #7a9269;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hero {
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #496a2b;
+  text-align: center;
+  background: #BADD7F;
+  padding: 1.8rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(61, 115, 55, 0.15);
+  
+}
+
+.gallery {
+  max-width: 1100px;
+  margin: 0 auto 4rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(61, 115, 55, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(61, 115, 55, 0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item figcaption {
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #3D7337;
+  text-align: center;
+  font-style: normal;
+}
+
+.welcome {
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+  color: #496a2b;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  padding: 0 1rem;
+  font-style: normal;
+}
+
+.cta-button {
+  display: inline-block;
+  margin: 0 auto 5rem auto;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 2px solid #3D7337;
+  color: #3D7337;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 35px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  text-align: center;
+  box-shadow: none;
+}
+
+.cta-button:hover {
+  background: #F8839E;
+  border-color: #F8839E;
+  color: white;
+  box-shadow: 0 6px 12px rgba(248, 131, 158, 0.4);
+}
+
+footer {
+  background: #fff;
+  color: #496a2b;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  border-top: 2px solid #BADD7F;
+  box-shadow: 0 -2px 6px rgba(61, 115, 55, 0.1);
+}
+.main-nav {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 3rem;
+  padding: 0;
+}
+
+.main-nav a {
+  color: #3D7337;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #F8839E; /* subtle coral underline */
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus::after,
+.main-nav a.active::after {
+  width: 100%;
+}
+
+.main-nav a:hover,
+.main-nav a:focus,
+.main-nav a.active {
+  color: #F8839E;
+  outline: none;
+}
+/* Gallery Section Styling */
+.gallery {
+  max-width: 1100px;
+  margin: 0 auto 5rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  padding: 0 1rem;
+}
+
+.gallery-item {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(61, 115, 55, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-item:hover,
+.gallery-item:focus-within {
+  transform: translateY(-10px);
+  box-shadow: 0 14px 30px rgba(61, 115, 55, 0.25);
+  outline: none;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #BADD7F;
+  transition: filter 0.3s ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-within img {
+  filter: brightness(1.05);
+}
+
+.gallery-item figcaption {
+  padding: 1.2rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #3D7337;
+  text-align: center;
+  font-style: normal;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order-btn {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.5rem 1.5rem;
+  background-color: #F8839E;  /* Coral pink */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.order-btn:hover,
+.order-btn:focus {
+  background-color: #e37187; /* Slightly darker pink */
+  outline: none;
+}
+.gallery-item figcaption {
+  padding: 1.2rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #3D7337;
+  text-align: center;
+  font-style: normal;
+  flex-direction: column;    /* stack name and button vertically */
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;              /* adds vertical space between name and button */
+  justify-content: center;
+}
+/* Modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(61, 115, 55, 0.75); /* translucent dark green */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Show modal */
+.modal.show {
+  display: flex;
+}
+
+/* Modal content box */
+.modal-content {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 12px 30px rgba(61, 115, 55, 0.25);
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: #3D7337;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: #F8839E;
+  outline: none;
+}
+
+/* Form labels and inputs */
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #3D7337;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.55rem 0.75rem;
+  border: 1.8px solid #BADD7F;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #333;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #F8839E;
+  outline: none;
+}
+
+/* Submit button */
+.submit-btn {
+  margin-top: 1.8rem;
+  width: 100%;
+  padding: 0.65rem 0;
+  background-color: #F8839E;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: #e37187;
+  outline: none;
+}
+/* Elegant styling for About page content */
+
+.about-content {
+  max-width: 680px;
+  margin: 60px auto 80px;
+  padding: 20px 30px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #2A3E1B; /* Dark green, but not too harsh */
+  background: #fff;
+  border-left: 6px solid #F8839E; /* Pink accent, strong but simple */
+  box-shadow: 0 4px 8px rgb(61 115 55 / 0.1);
+  line-height: 1.6;
+  font-size: 1.15rem;
+  letter-spacing: 0.015em;
+  border-radius: 6px;
+}
+
+.about-content h2 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  color: #3D7337; /* main green */
+  text-transform: none; /* Keep it natural */
+  padding-bottom: 4px;
+  border-bottom: 2px solid #BADD7F; /* subtle green underline */
+}
+
+.about-content p {
+  margin-bottom: 20px;
+  color: #4A5B28;
+}
+
+/* Contact Page Styles */
+.contact-info, .map, .contact-form {
+  max-width: 700px;
+  margin: 40px auto 60px;
+  padding: 20px 30px;
+  background: #faf9f7; /* soft warm off-white */
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
+  color: #3D7337; /* your dark green */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-info:hover, .contact-form:hover, .map:hover {
+  box-shadow: 0 8px 20px rgba(61, 115, 55, 0.15);
+}
+
+.contact-info h2, .map h2, .contact-form h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #2c5d24; /* deeper green */
+  border-left: 6px solid #F8839E; /* pink vertical accent */
+  padding-left: 12px;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form label {
+  font-weight: 500;
+  color: #516e3d;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1.8px solid #badd7f;
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #f8839e;
+  box-shadow: 0 0 8px rgba(248, 131, 158, 0.4);
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #3D7337;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #2a4a1c;
+}
+
+.map iframe {
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  height: 320px;
+  border: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.map iframe:hover {
+  box-shadow: 0 8px 22px rgba(61, 115, 55, 0.18);
+}
